@@ -117,7 +117,7 @@ let g:neomake_ruby_reek_maker = {
     \ 'args': ['--single-line'],
     \ 'errorformat': g:neomake_ruby_reek_maker_errorformat,
     \ }
- let b:neomake_ruby_rubocop_exe = "/Users/rocela/.rbenv/versions/2.6.3/bin/rubocop"
+" let b:neomake_ruby_rubocop_exe = "/Users/rocela/.rbenv/versions/2.6.3/bin/rubocop"
 let g:neomake_ruby_enabled_makers = ['mri', 'rubocop']
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_serialize = 1
