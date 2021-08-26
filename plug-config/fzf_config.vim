@@ -12,9 +12,9 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 " nnoremap <C-p> :FZF<cr>
 nnoremap <C-p> :Files<cr>
-map <C-f> :Rg<CR>
-map <C-b> :Buffers<CR>
-map <C-i> :History<CR>
+nnoremap <C-f> :Rg<CR>
+nnoremap <C-b> :Buffers<CR>
+nnoremap <leader>h :History<CR>
 
 " nnoremap <leader>g :Rg<CR>
 " nnoremap <leader>t :Tags<CR>
@@ -26,10 +26,10 @@ let g:fzf_tags_command = 'ctags -R'
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
 
 let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
-let $FZF_DEFAULT_COMMAND="rg --files"
+" let $FZF_DEFAULT_COMMAND="rg --files"
 " let $FZF_DEFAULT_COMMAND="rg --files --hidden"
 " If you want gitignored files:
-" let $FZF_DEFAULT_COMMAND = 'rg --files --no-ignore-vcs --hidden'
+let $FZF_DEFAULT_COMMAND = 'rg --files --no-ignore-vcs --hidden'
 
 
 " Customize fzf colors to match your color scheme

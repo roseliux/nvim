@@ -51,6 +51,10 @@ set wildignore+=*/public/*
 set wildignore+=*/coverage/*
 set wildignore+=*.png,*.jpg,*.otf,*.woff,*.jpeg,*.orig
 
+if has("termguicolors")
+  set termguicolors
+endif
+
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
 au FocusGained,BufEnter * :checktime " reloads the file
@@ -100,10 +104,6 @@ autocmd BufReadPost *
     \     exe "normal g'\"" |
     \ endif |
 
-" ag with the silver search
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
 
 " linters
 " autocmd! BufReadPost,BufWritePost * Neomake
@@ -117,8 +117,21 @@ let g:neomake_ruby_reek_maker = {
     \ 'args': ['--single-line'],
     \ 'errorformat': g:neomake_ruby_reek_maker_errorformat,
     \ }
-" let b:neomake_ruby_rubocop_exe = "/Users/rocela/.rbenv/versions/2.6.3/bin/rubocop"
+let b:neomake_ruby_rubocop_exe = "/Users/rocela/.rbenv/versions/2.6.3/bin/rubocop"
 let g:neomake_ruby_enabled_makers = ['mri', 'rubocop']
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_serialize = 1
 let g:neomake_serialize_abort_on_error = 1
+
+" rspec
+let g:rspec_command = "!rspec --drb --color {spec}"
+
+" Syntastic linters
+let g:syntastic_scss_checkers = ['scss_lint']
+
+" Ack https://github.com/mileszs/ack.vim
+" let g:ackpreview = 0
+" ag with the silver search
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep --unrestricted'
+endif

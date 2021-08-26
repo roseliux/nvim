@@ -20,7 +20,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-endwise'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-dispatch'
 
+    " Ruby
+    Plug 'thoughtbot/vim-rspec'
 
     " Themes and airline
     Plug 'dracula/vim', { 'as': 'dracula' }
@@ -53,5 +56,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'vim-ruby/vim-ruby'
     Plug 'tpope/vim-rbenv', { 'for': 'ruby' }
     Plug 'slim-template/vim-slim', { 'for': ['slim'] }
+    Plug 'vim-syntastic/syntastic'
 
 call plug#end()
